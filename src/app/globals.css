@@ -13,6 +13,10 @@
 
 html,
 body {
-    @apply bg-background text-text w-screen h-screen
+    @apply bg-background text-text w-screen h-screen;
+}
+
+a {
+    @apply hover:underline hover:underline-offset-4 active:opacity-50 transition-opacity
 }
 
