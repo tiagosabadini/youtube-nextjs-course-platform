@@ -1,13 +1,31 @@
 import { Card } from "../card/Card";
 
 
-export const Section = () => {
+interface ISectionProps {
+    title: string;
+    variant: "grid" | "h-list";
+}
+
+export const Section = ({title, variant}: ISectionProps) => {
 
     return (
         <section className="flex flex-col gap-4 p-4">
-            <h2 className="font-bold text-lg">Todos os cursos</h2>
-            <ul>
-                <li>
+            <h2 className="font-bold text-lg">{title}</h2>
+            
+            
+            
+            <ul 
+            data-variant={variant}    
+            className="
+                grid gap-4 
+                grid-cols-1
+                sm:grid-cols-none
+                data-[variant=grid]:sm:grid-cols-2 
+                data-[variant=grid]:md:grid-cols-3
+                data-[variant=h-list]:sm:grid-flow-col
+                data-[variant=h-list]:sm:overflow-scroll
+                ">
+                <li className="w-full data[variant=h-list]:sm:w-72">
                 <Card
                     image="https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg"
                     title="Curso de API Rest, Node e Typescript"
@@ -63,7 +81,7 @@ export const Section = () => {
                             #typescript #cursotypescript #javascript #cursodejavascript #reactetypescript #learningtypescript #learningjavascript
                     `} />
                 </li>
-                <li><Card
+                <li className="w-full data[variant=h-list]:sm:w-72"><Card
                     image="https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg"
                     title="Curso de API Rest, Node e Typescript"
                     href="/cursos/123"
@@ -117,7 +135,7 @@ export const Section = () => {
 
                             #typescript #cursotypescript #javascript #cursodejavascript #reactetypescript #learningtypescript #learningjavascript
                     `} /></li>
-                <li><Card
+                <li className="w-full data[variant=h-list]:sm:w-72"><Card
                     image="https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg"
                     title="Curso de API Rest, Node e Typescript"
                     href="/cursos/123"
